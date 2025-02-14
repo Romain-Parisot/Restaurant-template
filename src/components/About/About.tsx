@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './About.css';
 
 const About = () => {
@@ -6,7 +6,7 @@ const About = () => {
     /**
      * Parallax Effect
      */
-    const parallaxItems = document.querySelectorAll("[data-parallax-item]");
+    const parallaxItems = document.querySelectorAll('[data-parallax-item]');
 
     const handleMouseMove = (event: MouseEvent) => {
       let x, y;
@@ -18,37 +18,48 @@ const About = () => {
       y = y - y * 2; // Reverse the Y-axis
 
       parallaxItems.forEach((item) => {
-        const speed = Number(item.getAttribute("data-parallax-speed"));
+        const speed = Number(item.getAttribute('data-parallax-speed'));
         const transformX = x * speed;
         const transformY = y * speed;
-        (item as HTMLElement).style.transform = `translate3d(${transformX}px, ${transformY}px, 0px)`;
+        (item as HTMLElement).style.transform =
+          `translate3d(${transformX}px, ${transformY}px, 0px)`;
       });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
 
     // Cleanup listener on unmount
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
   return (
-    <section className="section about text-center" aria-labelledby="about-label" id="about">
+    <section
+      className="section about text-center"
+      aria-labelledby="about-label"
+      id="about"
+    >
       <div className="container">
         <div className="about-content">
           <p className="label-2 section-subtitle" id="about-label">
             Our Story
           </p>
-          <h2 className="headline-1 section-title">Every Flavor Tells a Story</h2>
+          <h2 className="headline-1 section-title">
+            Every Flavor Tells a Story
+          </h2>
           <p className="section-text">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum has been the
-            industrys standard dummy text ever since the when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book It has survived not only five centuries, but also the leap
-            into.
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry lorem Ipsum has been the industrys standard dummy text ever
+            since the when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book It has survived not only
+            five centuries, but also the leap into.
           </p>
           <div className="contact-label">Book Through Call</div>
-          <a href="tel:+804001234567" className="body-1 contact-number hover-underline">
+          <a
+            href="tel:+804001234567"
+            className="body-1 contact-number hover-underline"
+          >
             +80 (400) 123 4567
           </a>
           <a href="#" className="btn btn-primary">
@@ -69,7 +80,11 @@ const About = () => {
             data-parallax-item
             data-parallax-speed="1"
           />
-          <div className="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
+          <div
+            className="abs-img abs-img-1 has-before"
+            data-parallax-item
+            data-parallax-speed="1.75"
+          >
             <img
               src="/assets/about-abs-image.jpg"
               width="285"

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Hero.css';
 import { IonIcon } from '@ionic/react';
 import { chevronBackOutline, chevronForwardOutline } from 'ionicons/icons';
@@ -32,7 +32,7 @@ const Hero = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? sliderItems.length - 1 : prevSlide - 1
+      prevSlide === 0 ? sliderItems.length - 1 : prevSlide - 1,
     );
   };
 
@@ -88,7 +88,12 @@ const Hero = () => {
         <IonIcon icon={chevronForwardOutline} />
       </button>
       <a href="#" className="hero-btn has-after">
-        <img src="/assets/hero-icon.png" width="48" height="48" alt="booking icon" />
+        <img
+          src="/assets/hero-icon.png"
+          width="48"
+          height="48"
+          alt="booking icon"
+        />
         <span className="label-2 text-center span">Book A Table</span>
       </a>
     </section>
